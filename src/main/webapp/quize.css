@@ -1,0 +1,111 @@
+body{
+    min-height: 100vh;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMupcexex2CmKO2Q4bcq7gnzANBHcmoP71Q&amp;s");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+#subject{
+    color:rgb(8, 132, 163);
+    margin-top:20px;
+}
+#full-card{
+    background:rgba(44, 27, 2, 0.7);
+    padding:10px;
+    width:90%;
+    height:auto;
+    display:grid;
+    grid-template-rows: auto auto auto;
+    gap:20px;
+    border-radius:30px;
+}
+#question{
+    color:white;
+    font-family:'Courier New', Courier, monospace;
+    background:transparent;
+    height:auto;
+    border-radius:10px;
+    padding:5px;
+}
+#choices-btn-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    row-gap: 10px;
+    column-gap:20px;
+    margin:20px
+
+}
+.choice-btn{
+    font-family:'Courier New', Courier, monospace;
+    font-size:large;
+    background:rgba(22, 13, 122, 0.5);
+    border-radius: 20px;
+    color:white;
+
+    height:100px
+}
+.choice-btn:hover{
+    background-color:rgb(60, 62, 56);
+}
+.choice-btn:active{
+    color:black;
+    background-color:rgb(42, 187, 207)
+}
+#next-btn{
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1.5rem;
+     width:100px;
+     height:40px;
+     background:rgba(51, 130, 221, 0.7);
+     border-radius:20px;
+     margin-bottom:5px;
+}
+#next-btn:hover{
+  background-color:rgb(51, 221, 111);
+}
+#next-btn:active{
+    background-color:green;
+}
+#controls{
+    display:flex;
+    flex-direction: row;
+    gap:auto;
+    justify-content: space-between;
+    padding:0 50px;
+}
+#quit{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1.5rem;
+     width:100px;
+     height:40px;
+     background-color:rgb(221, 173, 51);
+     border-radius:20px;
+     margin-bottom:5px;
+}
+#quit:hover{
+     background-color:rgb(211, 18, 18);
+}
+#quit:active{
+    background-color: rgb(231, 108, 133);
+}
+#finish{
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size:1.5rem;
+     width:100px;
+     height:40px;
+     background:rgb(0, 204, 255);
+     border-radius:20px;
+     margin-bottom:5px;
+     visibility: hidden;
+}
+#finish:hover{
+  background-color:rgb(51, 221, 190);
+}
+#finish:active{
+    background-color:green;
+}
