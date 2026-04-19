@@ -2,12 +2,20 @@ const questionElement = document.getElementById('question');
 const choices = document.querySelectorAll('.choice-btn');
 const nexBtn = document.getElementById('next-btn');
 const quitBtn = document.getElementById('quit');
-const subject = document.getElementById('subject');
+const subjectHeader = document.getElementById('subject');
 const finishBtn = document.getElementById('finish');
-let currentIndex = 0;
+const selectedSubjectName = localStorage.getItem('selectedSubjectName');
+const selectedSubjectId = localStorage.getItem('selectedSubjectId');
 
+
+let currentIndex = 0;
 let listOfQuestions =[];
 let userAnswer =[];
+
+if(selectedSubjectName && subjectHeader){
+    subjectHeader.innerText = selectedSubjectName;
+}
+
 
 async function loadQuestionsFromServer(){
     try{
@@ -96,7 +104,7 @@ nexBtn.addEventListener('click',() =>{
         currentIndex=0;
     }
     showQuestion();
-    console.log(userAnswer);
+    console.log(userAnswer)
 });
 
 finishBtn.addEventListener('click', () =>{
@@ -112,5 +120,15 @@ finishBtn.addEventListener('click', () =>{
     </div>
     `
 });
+if(quitBtn){
+quitBtn.addEventListener('click' , ()=>{
+    if(confirm("Are you suer you wanna quit? all progress will be lost")){
+        localStorage.removeItem('selectedSubjectId');
+        localStorage.removeItem('selectedSubjectName');
+
+        window.location.href='studentHome.html';
+    }
+});
+}
 
 loadQuestionsFromServer();
