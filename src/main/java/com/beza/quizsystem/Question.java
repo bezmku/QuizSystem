@@ -1,7 +1,7 @@
 package com.beza.quizsystem;
 
 public class Question {
-    private int Id;
+    private int id;
     private String text;
     private String optA,optB,optC, optD;
     private String correctAnswer;
@@ -9,7 +9,7 @@ public class Question {
     public Question(){}
 
     public Question(int id, String text, String optA, String optB, String optC, String optD, String correctAnswer) {
-        Id = id;
+        this.id = id;
         this.text = text;
         this.optA = optA;
         this.optB = optB;
@@ -18,7 +18,7 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
     public int getId() {
-        return Id;
+        return id;
     }
 
     public String getText() {

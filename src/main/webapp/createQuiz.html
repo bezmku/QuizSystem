@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="createQuiz.css">
+</head>
+<body>
+    <div id="main-container">
+        <div class="input-group">
+            <label for="subject-id">Target Subject: </label>
+            <select name="subject-id" id="subject-id" required>
+                <option value="" disabled selected>---select subject---</option>
+                <option value="1">Mathematics</option>
+                <option value="2">Physics</option>
+                <option value="3">Chemistry</option>
+                <option value="4">Biology</option>
+                <option value="5">Aptitude</option>
+                <option value="6">General Knowledge</option>
+            </select>
+        </div><br><br>
+        <div id="preview-section">
+            <h3 id="quiz-preview">Qiuz preview (<span id="question-count"> 0 </span>  questions)</h3>
+            <div id="question-list">
+                <p id="empty-message">No Questions Created. Use the form below!</p>
+            </div>
+            <hr>
+        </div>
+        <form action="">
+            <lable for="question-text">Question: </lable>
+            <input type="text" id="question-text" placeholder="enter question" required><br><br>
+
+            <label for="option-a">A: </label>
+            <input type="text" id="option-a" required><br><br>
+
+            <label for="option-b">B: </label>
+            <input type="text" id="option-b" required><br><br>
+
+            <label for="option-c">C: </label>
+            <input type="text" id="option-c" required><br><br>
+
+            <label for="option-d">D: </label>
+            <input type="text" id="option-d" required><br><br>
+          
+            <div id="correct-aswer-group">
+                <label for="correct-answer">Correct answer: </label>
+
+                <input type="radio" id="opt-a" name="correct-answer" value="A">
+                <label for="opt-a">A &ThickSpace;| </label>
+
+                <input type="radio" id="opt-b" name="correct-answer" value="B">
+                <label for="opt-b">B &ThickSpace;|</label>
+
+                <input type="radio" id="opt-c" name="correct-answer" value="C">
+                <label for="opt-c">C &ThickSpace;|</label>
+
+                <input type="radio" id="opt-d" name="correct-answer" value="D">
+                <label for="opt-d">D&ThickSpace;</label>
+            </div>
+            <button type="button" id="add-question">Add Question</button>
+            <button type="button" id="clear">Clear</button>
+            <button type="button" id="submit">Submit Question</button>
+        </form>
+    </div>
+    <script src="createQuiz.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ const quitBtn = document.getElementById('quit');
 const subjectHeader = document.getElementById('subject');
 const finishBtn = document.getElementById('finish');
 const selectedSubjectName = localStorage.getItem('selectedSubjectName');
-const selectedSubjectId = localStorage.getItem('selectedSubjectId');
+const selectedSubjectId = localStorage.getItem('selectedSubjectId')
 
 
 let currentIndex = 0;
