@@ -90,5 +90,24 @@ public class QuestionDAO {
         }
         return questions;
     }
+    public List<Subject> getSubjects(){
+        List<Subject> subjects = new ArrayList<>();
+        String sql = "SELECT * FROM subjects";
+        try(Connection conn = DatabaseConfig.getConnection();
+        PreparedStatement ps = conn.prepareStatement(sql)){
+            try(ResultSet rs = ps.executeQuery()){
+              while(rs.next()){
+                  Subject s = new Subject(
+                          rs.getInt("subject_id"),
+                          rs.getString("subject_name")
+                  );
+                  subjects.add(s);
+              }
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return subjects;
+    }
 
 }

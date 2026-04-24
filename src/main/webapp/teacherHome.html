@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Teacher home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | QuizHub</title>
+    <link rel="stylesheet" href="assets/css/global.css">
 </head>
 <body>
-<h1 style="font-size: xxx-large; color:green;">Welcome Teacher!!!</h1>
-<a href="createQuiz.html">Create quiz</a>
+
+<header>
+    <div class="logo">QUIZ<span>HUB</span></div>
+    <nav>
+        <a href="#" style="color:white;">Help</a>
+        <a href="logout" style="color:#e74c3c;">Logout</a>
+    </nav>
+</header>
+
+<div class="layout-wrapper">
+    <aside>
+        <div class="user-info" style="margin-bottom: 2rem; padding:10px;">
+            <p>Logged in as: <strong>Instructor</strong></p>
+        </div>
+        <ul class="side-nav">
+            <li><a href="teacherHome.html" class="active"><b>Admin Panel</b></a></li>
+            <li><a href="manageQuizzes.html">Manage Quizzes</a></li>
+            <li><a href="studentGrades.html">Student Grades</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="content-header">
+            <h1>Teacher Control Center</h1>
+            <p style="margin:10px; font-size: large;">Manage your curriculum and monitor student progress.</p>
+        </div>
+
+        <div id="admin-actions" class="module-grid">
+            <div class="card" onclick="location.href='createQuiz.html'">
+                <div style="font-size: 3rem; color: var(--accent);">+</div>
+                <h3>Create New Quiz</h3>
+                <p style="color:#7f8c8d; font-size: 0.9rem;">Add questions to a subject</p>
+            </div>
+
+            <div class="card" onclick="location.href='studentGrades.html'">
+                <div style="font-size: 3rem; color: #27ae60;">📊</div>
+                <h3>View Results</h3>
+                <p style="color:#7f8c8d; font-size: 0.9rem;">Analyze student performance</p>
+            </div>
+
+            <div class="card" onclick="location.href='questions.html'">
+                <div style="font-size: 3rem; color: #f39c12;">?</div>
+                <h3>Questions</h3>
+                <p style="color:#7f8c8d; font-size: 0.9rem;">Check the questions you have created so far</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    &copy; 2026 QuizHub | Teacher Administration Edition
+</footer>
+
 </body>
 </html>

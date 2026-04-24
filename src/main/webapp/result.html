@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result | QUIZHUB</title>
+  <link rel="stylesheet" href="assets/css/global.css">
+  <style>
+    /* Specific styles for the results table */
+    .table-container{
+      width:100%;
+      max-height:600px;
+      overflow-y:auto;
+      overflow-x:auto;
+    }
+    .results-table thead {
+      position: sticky;
+      top:0;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-top: 20px;
+    }
+    .results-table th {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+    }
+    .results-table td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .results-table tr:hover {
+      background-color: #f9fbff;
+    }
+    .score-badge {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .score-high { background: #e8f5e9; color: #2e7d32; }
+    .score-low { background: #ffebee; color: #c62828; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">QUIZ<span>HUB</span></div>
+  <nav>
+    <a href="#" style="color:white;">About</a>
+    <a href="logout" style="color:#e74c3c;">Logout</a>
+  </nav>
+</header>
+
+<div class="layout-wrapper">
+  <aside>
+    <div class="user-info" style="margin-bottom: 2rem; padding:10px;">
+      <p>Logged in as: <strong>Student</strong></p>
+    </div>
+    <ul class="side-nav">
+      <li><a href="index.html" ><b>Dashboard</b></a></li>
+      <li><a href="result.html" class="active">My Results</a></li>
+      <li><a href="profile.html">My Profile</a></li>
+    </ul>
+  </aside>
+  <main>
+
+    <div id="content-header">
+      <h1>Performance History</h1>
+      <p style="margin-top:10px; font-size: 1.2rem; color:var(--muted);">See you results from previous quiz attempts</p>
+    </div>
+
+   <div class="table-container">
+     <table class="results-table">
+       <thead>
+       <tr>
+         <th>Subject</th>
+         <th>Date Taken</th>
+         <th>Questions</th>
+         <th>Score</th>
+         <th>Status</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+         <td>Mathematics</td>
+         <td>April 24, 2026</td>
+         <td>10</td>
+         <td>9/10</td>
+         <td><span class="score-badge score-high">Passed</span></td>
+       </tr>
+       <tr>
+         <td>Physics</td>
+         <td>Apr 22, 2026</td>
+         <td>10</td>
+         <td>3/10</td>
+         <td><span class="score-badge score-low">Failed</span></td>
+       </tr>
+       </tbody>
+     </table>
+   </div>
+
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2026 QuizHub | Professional Edition
+</footer>
+</body>
+<script src="assets/js/result.js"></script>
+</html>

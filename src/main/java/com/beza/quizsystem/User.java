@@ -1,19 +1,25 @@
 package com.beza.quizsystem;
 
 public class User {
+    private int userId;
     private String username;
     private String password;
     private String email;
     private String role;
 
-    User(){}
-    User(String username,String password,String email, String role){
+   public User(){}
+   public User(String username,String password,String email, String role){
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
     }
-
+    public int getId(){
+       return userId;
+    }
+    public void setId(int userId){
+       this.userId = userId;
+    }
     public String getUsername() {
         return username;
     }

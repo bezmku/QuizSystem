@@ -3,27 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="quize.css">
+    <title>Quiz Session | QuizHub</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <style>
+        /* Essential Quiz Layout - Keeping it functional */
+        .quiz-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-    <title>Questions</title>
+        #question {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            min-height: 80px;
+        }
+
+        /* Grid for the 4 choice buttons */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .choice-btn {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        /* Logic controls (Next, Finish, Quit) */
+        #controls {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        #next-btn { background-color: var(--accent); color: white; }
+        #finish { background-color: #27ae60; color: white; visibility: hidden; }
+        #quit { background-color: #e74c3c; color: white; }
+
+        /* Hidden class for dynamic state */
+        .next-btn-hide { visibility: hidden; }
+    </style>
 </head>
 <body>
-    <h1 id="subject">Subject where the questions where taken from</h1>
-    <div id="full-card">
-           <h2 id="question" >what are the main life forms that exist on planet and which of them belong life of oceans and seas?</h2>
-           <div id="choices-btn-container" class="btn-grid">
-               <button id="choice1" class="choice-btn">option one</button>
-               <button id="choice2" class="choice-btn">option two</button>
-               <button id="choice3" class="choice-btn">option three</button>
-               <button id="choice4" class="choice-btn">option four</button>
-           </div>
 
-           <div id="controls">
-            <button id="next-btn" class="next-btn-hide">Next</button>
-            <button id="quit" >Quit</button>
-            <button id="finish" >Submit</button>
-           </div>
+<header>
+    <div class="logo">QUIZ<span>HUB</span></div>
+    <div id="subject" style="font-weight: bold; color: white; font-size: 1.2rem;">Subject Name</div>
+    <nav>
+        <a href="index.html" style="color:white; font-size: 0.9rem;">Exit</a>
+    </nav>
+</header>
+
+<main>
+    <div class="quiz-wrapper" id="full-card">
+        <h2 id="question">Loading question...</h2>
+
+        <div id="choices-btn-container" class="btn-grid">
+            <button id="choice1" class="choice-btn">Option 1</button>
+            <button id="choice2" class="choice-btn">Option 2</button>
+            <button id="choice3" class="choice-btn">Option 3</button>
+            <button id="choice4" class="choice-btn">Option 4</button>
+        </div>
+
+        <div id="controls">
+            <button id="quit">Quit</button>
+            <div style="display: flex; gap: 10px;">
+                <button id="next-btn">Next</button>
+                <button id="finish">Submit Quiz</button>
+            </div>
+        </div>
     </div>
-    <script src="quiz.js"></script>
+</main>
+
+<footer>
+    &copy; 2026 QuizHub | Focused Assessment Mode
+</footer>
+
+<script src="assets/js/quiz.js"></script>
 </body>
 </html>

@@ -164,18 +164,39 @@ document.addEventListener('DOMContentLoaded', () =>{
 // finish button event listener
 // ================================================================
 
-    finishBtn.addEventListener('click', () => {
+    finishBtn.addEventListener('click', async () => {
         const score = calculateResult();
+        const total = listOfQuestions.length;
 
-        const card = document.getElementById('full-card');
+        const resultData = {
+            userId:1,
+            subjectId:parseInt(selectedSubjectId),
+            totalQuestions:total,
+            score:score
+        };
+        console.log(resultData);
+        try{
+           const response = await fetch('api/save-result', {
+               method:'POST',
+               headers:{
+                   'Content-Type':'application/json'
+               },
+               body:JSON.stringify(resultData)
+           });
+           const res = await response.json();
+           if(res.success){
+               alert("Quiz summited successfully !!");
+               window.location.href = 'result.html';
 
-        card.innerHTML = `
-    <div style="text-align: center; padding:40px">
-    <h1 style="color: #0884a3"> Quize Complete!</h1>
-    <p style="color: white; font-size: 1.5rem;">You scored: ${score} / ${listOfQuestions.length}</p>
-            <button id="quit" onclick="location.reload()" style="margin-top: 20px; width:auto; height:auto;">Try Again</button>
-    </div>
-    `
+           }else{
+               alert("database error could not save your result");
+           }
+        }catch(error){
+            console.error("Network error: ", error);
+            alert("could not connect to the server");
+
+        }
+
     });
 
 // ================================================================

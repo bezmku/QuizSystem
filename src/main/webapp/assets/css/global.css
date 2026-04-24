@@ -68,7 +68,7 @@ aside {
     background: var(--bg);
     border-right: 1px solid var(--border);
 
-    padding-left: 2rem 1rem;
+    padding-left: 2rem;
     min-height: 100%;
 }
 
@@ -121,7 +121,7 @@ main {
     margin-top: 20px;
 }
 
-.module-btn {
+.card {
     background: rgb(206, 219, 218);
     border: 1px solid var(--border);
     border-radius: 30px;
@@ -129,10 +129,10 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.2 ease;
+    transition: transform 0.3s ease;
 }
 
-.module-btn:hover {
+.card:hover {
     background: white;
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgb(74, 144, 226, 0.1);
@@ -147,8 +147,8 @@ footer {
     font-size: 1.2rem;
 }
 
-.module-btn h3 {
-    color: var(--primary-dark);
+.card h3 {
+    color: var(--module-btn);
     margin-bottom: 10px;
     font-size: 1.2rem;
 }

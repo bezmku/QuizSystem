@@ -34,6 +34,7 @@ public User logInUser(String username, String password){
 
         if(rs.next()){
             User user = new User();
+            user.setId(rs.getInt("user_id"));
             user.setUsername(rs.getString("username"));
             user.setRole(rs.getString("role"));
             return user;

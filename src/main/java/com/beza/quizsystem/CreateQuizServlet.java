@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +18,14 @@ public class CreateQuizServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession(false);
+
+        String role = (session != null)?session.getAttribute("role").toString() : null;
+        if(!"TEACHER".equals(role)){
+           response.setStatus(403);
+           response.getWriter().write("{\"success\":false,\"message\":\"Only teacher can create questions!\"}");
+            return;
+        }
         StringBuilder buffer = new StringBuilder();
         String line;
         try(BufferedReader reader = request.getReader()){
