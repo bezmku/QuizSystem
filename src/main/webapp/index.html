@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | QuizHub</title>
+        <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">QUIZ<span>HUB</span></div>
+        <nav>
+            <a href="#" style="color:white;">About</a>
+            <a href="logout" style="color:#e74c3c;">Logout</a>
+        </nav>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="user-info" style="margin-bottom: 2rem; padding:10px;">
+                <p>Logged in as: <strong>Student</strong></p>
+            </div>
+            <ul class="side-nav">
+                <li><a href="studentHome.html" class="active"><b>Dashboard</b></a></li>
+                <li><a href="result.html">My Results</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="content-header">
+                <h1>Avaliable Module</h1>
+                <p style="margin:10px; font-size: large;">Pick a subject to continue to quiz</p>
+            </div>
+
+            <div id="module-container" class="module-grid">
+                <div class="module-btn" data-subject="1" data-name="Mathematics">
+                    <h3>Mathematics</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+
+                <div class="module-btn" data-subject="2" data-name="Physics">
+                    <h3>Physics</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+
+                <div class="module-btn" data-subject="3" data-name="Chemistry">
+                    <h3>Chemistry</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+
+                <div class="module-btn" data-subject="4" data-name="Biology">
+                    <h3>Biology</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+
+                <div class="module-btn" data-subject="5" data-name="Aptitude">
+                    <h3>Aptitude</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+                <div class="module-btn" data-subject="6" data-name="General Knowledge">
+                    <h3>General Knowledge</h3>
+                    <p style="color:#7f8c8d; font-size: 0.9rem;">10 Questions</p>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+    <footer>
+        &copy; 2026 QuizHub | Professional Edition
+    </footer>
+
+    <script src="studentHome.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+:root {
+    --bg: #eef4fb;
+    --module-btn: #ffffff;
+    --text: #1f3346;
+    --muted: #68717f;
+    --accent: #4a90e2;
+    --border: #d6e1ef;
+    --side-bar-width: 250px;
+    --header-bg: rgb(91, 70, 70);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header-bg);
+    color: white;
+    padding: 0.5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.logo span {
+    font-size: 2rem;
+    color: #e74c3c
+}
+
+nav a {
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.layout-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - 80px - 2rem);
+}
+
+aside {
+    width: var(--side-bar-width);
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+
+    padding-left: 2rem 1rem;
+    min-height: 100%;
+}
+
+.side-nav {
+    list-style: none;
+}
+
+.side-nav li {
+    margin-bottom: 2rem;
+
+}
+
+.side-nav a {
+    display: block;
+    color: #333;
+    background: rgb(203, 203, 227);
+    border-radius: 5px;
+    padding: 1rem;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+.side-nav a:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgb(74, 144, 226, 0.1);
+    border-color: var(--accent);
+
+}
+
+.side-nav a.active {
+    color: white;
+    background-color: var(--accent);
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+
+
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.module-btn {
+    background: rgb(206, 219, 218);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.2 ease;
+}
+
+.module-btn:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgb(74, 144, 226, 0.1);
+    border-color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgb(73, 75, 73);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.module-btn h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
