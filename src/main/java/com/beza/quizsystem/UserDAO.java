@@ -21,7 +21,25 @@ public boolean registerUser(User user){
         return false;
     }
 }
+public User getCredentials(int id){
+    String sql = "SELECT * FROM users WHERE user_id = ?";
+    try(Connection conn = DatabaseConfig.getConnection();
+    PreparedStatement ps = conn.prepareStatement(sql)){
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
 
+        if(rs.next()){
+            User user = new User();
+                    user.setUsername(rs.getString("username"));
+                    user.setEmail(rs.getString("email"));
+                    user.setRole(rs.getString("role"));
+                    return user;
+        }
+    }catch (SQLException e){
+        e.printStackTrace();
+    }
+    return null;
+}
 public User logInUser(String username, String password){
     String sql = "SELECT * FROM users WHERE username = ? AND password_hash = ?";
 

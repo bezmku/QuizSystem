@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () =>{
+
     const questionContainer = document.getElementById('questions-container');
 
     try{
@@ -24,11 +25,15 @@ document.addEventListener('DOMContentLoaded', async () =>{
             card.innerHTML = `
             <h3 class="question-text"> ${text}<span class="subject">${subject}</span></h3>
                 <ul class="option-list">
-                    <li class="options">A. ${optA} ${(correctAnswer === 'A')?'<span class="correct">correc</span>' : ''}</li>
-                    <li class="options">B. ${optB} ${(correctAnswer === 'B')?'<span class="correct">correc</span>' : ''}</li>
-                    <li class="options">C. ${optC} ${(correctAnswer === 'C')?'<span class="correct">correc</span>' : ''}</li>
-                    <li class="options">D. ${optD} ${(correctAnswer === 'D')?'<span class="correct">correc</span>' : ''}</li>
+                    <li class="options">A. ${optA} ${(correctAnswer === 'A')?'<span class="correct">correct</span>' : ''}</li>
+                    <li class="options">B. ${optB} ${(correctAnswer === 'B')?'<span class="correct">correct</span>' : ''}</li>
+                    <li class="options">C. ${optC} ${(correctAnswer === 'C')?'<span class="correct">correct</span>' : ''}</li>
+                    <li class="options">D. ${optD} ${(correctAnswer === 'D')?'<span class="correct">correct</span>' : ''}</li>
                 </ul>
+                  <div class="btns-container">
+                    <button id="edit" class="btns">Edit</button>
+                    <button id="delete" class="btns" onclick="deleteQuestion(${questionId})">Delete</button>
+                </div>
             `
             questionContainer.appendChild(card);
         });
@@ -36,4 +41,18 @@ document.addEventListener('DOMContentLoaded', async () =>{
         console.error("Failed to load questions ", error);
         questionContainer.innerHTML='<p>could\'t load questions from database</p>';
     }
+
 })
+async function deleteQuestion(id){
+    if(confirm("Are you sure you wanna delete the question?")){
+        const response = await fetch(`api/delete?id=${id}`,{method:'POST'});
+        const result = await response.json();
+        if(result.success){
+
+            location.reload();
+        }
+        else{
+            alert("couldn't delete message");
+        }
+    }
+}

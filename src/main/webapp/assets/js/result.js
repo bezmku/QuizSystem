@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () =>{
      });
  }catch(error){
      console.error("Failed to load results history " ,error);
-     tableBody.innerHTML='<tr><tdl colspan="5">Could not load history</td></td>'
+     tableBody.innerHTML='<tr><td colspan="5">Could not load history</td></td>'
  }
 
 });

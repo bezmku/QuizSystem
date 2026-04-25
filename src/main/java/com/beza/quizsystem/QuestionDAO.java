@@ -141,4 +141,15 @@ public class QuestionDAO {
 
     }
 
+    public boolean deleteQuestion(int questionId){
+        String sql = "DELETE FROM questions WHERE question_id = ?";
+        try(Connection conn = DatabaseConfig.getConnection();
+        PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setInt(1,questionId);
+            return ps.executeUpdate() > 0;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

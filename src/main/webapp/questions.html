@@ -67,6 +67,38 @@
             padding:5px;
             border-radius: 5px;
         }
+        .btns-container{
+            display: flex;
+            justify-content: space-between;
+            margin-top:10px;
+            padding:5px;
+        }
+        .btns{
+            padding:10px;
+            width:70px;
+            border-radius:15px;
+            font-size: 1rem;
+            font-weight: bold;
+            border:none;
+            transition: transform 0.3s ease;
+        }
+        #edit{
+            background: var(--accent);
+            color:white;
+        }
+        #edit:hover{
+            background: #3986bc;
+            transform: translateY(-3px);
+        }
+        #delete{
+            background: #ff3838;
+            color:white;
+        }
+        #delete:hover{
+            background: #ff5252;
+            transform: translateY(-3px);
+
+        }
     </style>
 </head>
 <body>
@@ -97,7 +129,28 @@
         </div>
 
         <div id="questions-container" class="question-list">
-
+            <div class="question-card">
+                <h3 class="question-text">This is the questions <span class="subject">MATHEMATICS</span></h3>
+                <ul class="option-list">
+                    <li class="options">A Options a</li>
+                    <li class="options">B Options b</li>
+                    <li class="options">C Options c  <span class="correct">correct</span> </li>
+                    <li class="options">D Options d</li>
+                </ul>
+            </div>
+            <div class="question-card">
+                <h3 class="question-text">This is the questions <span class="subject">MATHEMATICS</span></h3>
+                <ul class="option-list">
+                    <li class="options">A Options a</li>
+                    <li class="options">B Options b</li>
+                    <li class="options">C Options c  <span class="correct">correct</span> </li>
+                    <li class="options">D Options d</li>
+                </ul>
+                <div class="btns-container">
+                    <button id="edit" class="btns">Edit</button>
+                    <button id="delete" class="btns">Delete</button>
+                </div>
+            </div>
         </div>
     </main>
 </div>
