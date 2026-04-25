@@ -26,6 +26,7 @@ public class CreateQuizServlet extends HttpServlet {
            response.getWriter().write("{\"success\":false,\"message\":\"Only teacher can create questions!\"}");
             return;
         }
+        int teacherId = (int) session.getAttribute("userId");
         StringBuilder buffer = new StringBuilder();
         String line;
         try(BufferedReader reader = request.getReader()){
@@ -38,7 +39,7 @@ public class CreateQuizServlet extends HttpServlet {
         boolean isSaved = false;
 
         if(quizReq!=null&&quizReq.getQuestions()!=null&&!quizReq.getQuestions().isEmpty()){
-            isSaved = questionDAO.saveQuestions(quizReq.getQuestions(), quizReq.getSubjectId());
+            isSaved = questionDAO.saveQuestions(quizReq.getQuestions(), quizReq.getSubjectId(), teacherId);
         }
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
